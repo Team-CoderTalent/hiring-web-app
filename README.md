@@ -6,7 +6,7 @@ In the project directory, you can run:
 
 ### Environment variables
 
-Create a config a **config** folder and add `config.env` file. Add the following variables:
+Create a **config** folder and add `config.env` file. Add the following variables:
 
 - NODE_ENV=development
 - PORT=5000
