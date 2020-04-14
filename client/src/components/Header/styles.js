@@ -5,6 +5,9 @@ const styles = makeStyles((theme) => ({
     textAlign: "center",
     padding: theme.spacing(5, 0),
   },
+  headline: {
+    padding: theme.spacing(0, 20),
+  },
 }));
 
 export default styles;

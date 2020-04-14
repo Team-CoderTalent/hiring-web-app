@@ -11,6 +11,10 @@
     "searchbar": {
       "id": "views.appBar.searchbar",
       "defaultMessage": "Search"
+    },
+    "button": {
+      "id": "views.appBar.buttons",
+      "defaultMessage": "Roles"
     }
   }
 }
