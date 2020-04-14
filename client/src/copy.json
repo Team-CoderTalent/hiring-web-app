@@ -1,6 +1,16 @@
 {
+  "headline": {
+    "id": "views.headline",
+    "defaultMessage": "Who's Actually Hiring?"
+  },
   "header": {
     "id": "views.header",
     "defaultMessage": "During these unprecedented times due to Covid-19 we have seen huge numbers of layoffs and companies freezing their hiring process. Below is a list of companies who are actully hiring, we are updating the list on a regualr basis."
+  },
+  "appBar": {
+    "searchbar": {
+      "id": "views.appBar.searchbar",
+      "defaultMessage": "Search"
+    }
   }
 }
