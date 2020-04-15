@@ -12,9 +12,41 @@
       "id": "views.appBar.searchbar",
       "defaultMessage": "Search"
     },
-    "button": {
-      "id": "views.appBar.buttons",
+    "buttons": {
+      "buttonRoles": {
+        "id": "views.appBar.buttons.buttonRoles",
+        "defaultMessage": "Roles"
+      },
+      "buttonCompany": {
+        "id": "views.appBar.buttons.buttonCompany",
+        "defaultMessage": "Add Company"
+      }
+    }
+  },
+  "table": {
+    "tableCell1": {
+      "id": "views.table.tableCell1",
+      "defaultMessage": "Company"
+    },
+    "tableCell2": {
+      "id": "views.table.tableCell2",
       "defaultMessage": "Roles"
+    },
+    "tableCell3": {
+      "id": "views.table.tableCell3",
+      "defaultMessage": "Locations"
+    },
+    "tableCell4": {
+      "id": "views.table.tableCell4",
+      "defaultMessage": "Last Updated"
+    },
+    "tableCell5": {
+      "id": "views.table.tableCell5",
+      "defaultMessage": "Apply Link"
+    },
+    "tableLink": {
+      "id": "views.table.tableLink",
+      "defaultMessage": "Apply Now"
     }
   }
 }

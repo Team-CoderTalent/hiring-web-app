@@ -1,6 +1,6 @@
 import { makeStyles } from "@material-ui/core/styles";
 
-const styles = makeStyles((theme) => ({
+const styles = makeStyles(theme => ({
   search: {
     position: "relative",
     border: "1px solid #cccccc",
@@ -8,7 +8,6 @@ const styles = makeStyles((theme) => ({
     marginLeft: 0,
     width: "100%",
     [theme.breakpoints.up("sm")]: {
-      marginLeft: theme.spacing(1),
       width: "auto",
     },
   },

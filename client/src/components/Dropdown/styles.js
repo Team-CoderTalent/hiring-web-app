@@ -1,8 +1,8 @@
 import { makeStyles } from "@material-ui/core/styles";
 
-const styles = makeStyles((theme) => ({
+const styles = makeStyles(theme => ({
   root: {
-    display: "flex",
+    flexGrow: 1,
     marginLeft: theme.spacing(5),
   },
   dropDown: {

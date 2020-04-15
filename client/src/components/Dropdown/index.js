@@ -1,8 +1,10 @@
 import React, { useState, useEffect, useRef } from "react";
 import Button from "@material-ui/core/Button";
 import DownArrow from "@material-ui/icons/KeyboardArrowDownOutlined";
+import { MuiThemeProvider } from "@material-ui/core/styles";
 import { injectIntl } from "react-intl";
 import styles from "./styles";
+import { theme } from "../../theme/overrides";
 import copy from "../../copy.json";
 
 export const DropDown = ({ intl }) => {
@@ -10,7 +12,7 @@ export const DropDown = ({ intl }) => {
   const classes = styles();
   const [isOpen, setIsOpen] = useState(false);
 
-  const handleClick = (e) => {
+  const handleClick = e => {
     if (node.current.contains(e.target)) {
       // inside click
       return;
@@ -34,16 +36,19 @@ export const DropDown = ({ intl }) => {
   }, []);
 
   return (
-    <div ref={node} className={classes.root}>
-      <Button
-        onClick={handleChange}
-        variant="contained"
-        endIcon={<DownArrow />}
-      >
-        {intl.formatMessage(copy.appBar.button)}
-      </Button>
-      <div className={`${toggleClass}`}>Show Me</div>
-    </div>
+    <MuiThemeProvider theme={theme}>
+      <div ref={node} className={classes.root}>
+        <Button
+          onClick={handleChange}
+          color="primary"
+          variant="contained"
+          endIcon={<DownArrow />}
+        >
+          {intl.formatMessage(copy.appBar.buttons.buttonRoles)}
+        </Button>
+        <div className={`${toggleClass}`}>Show Me</div>
+      </div>
+    </MuiThemeProvider>
   );
 };
 
