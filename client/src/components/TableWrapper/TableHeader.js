@@ -12,17 +12,20 @@ export const TableHeader = ({ intl }) => {
         <StyledTableCell>
           {intl.formatMessage(copy.table.tableCell1)}
         </StyledTableCell>
-        <StyledTableCell align="right">
+        <StyledTableCell>
           {intl.formatMessage(copy.table.tableCell2)}
         </StyledTableCell>
-        <StyledTableCell align="right">
+        <StyledTableCell>
           {intl.formatMessage(copy.table.tableCell3)}
         </StyledTableCell>
-        <StyledTableCell align="right">
+        <StyledTableCell>
           {intl.formatMessage(copy.table.tableCell4)}
         </StyledTableCell>
-        <StyledTableCell align="right">
+        <StyledTableCell>
           {intl.formatMessage(copy.table.tableCell5)}
+        </StyledTableCell>
+        <StyledTableCell>
+          {intl.formatMessage(copy.table.tableCell6)}
         </StyledTableCell>
       </TableRow>
     </TableHead>

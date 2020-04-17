@@ -34,19 +34,23 @@
     },
     "tableCell3": {
       "id": "views.table.tableCell3",
-      "defaultMessage": "Locations"
+      "defaultMessage": "Job Type"
     },
     "tableCell4": {
       "id": "views.table.tableCell4",
-      "defaultMessage": "Last Updated"
+      "defaultMessage": "Locations"
     },
     "tableCell5": {
       "id": "views.table.tableCell5",
-      "defaultMessage": "Apply Link"
+      "defaultMessage": "Last Updated"
     },
-    "tableLink": {
-      "id": "views.table.tableLink",
-      "defaultMessage": "Apply Now"
+    "tableCell6": {
+      "id": "views.table.tableCell6",
+      "defaultMessage": "Apply Link"
     }
+  },
+  "applyNow": {
+    "id": "views.applynow",
+    "defaultMessage": "Apply Now"
   }
 }

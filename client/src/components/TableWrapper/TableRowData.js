@@ -9,14 +9,19 @@ export const TableRowData = ({ intl, items }) => (
     {items.map(item => (
       <StyledTableRow key={item.id}>
         <StyledTableCell component="th" scope="row">
-          {item.name}
+          <strong>{item.name}</strong>
         </StyledTableCell>
-        <StyledTableCell align="right">{item.roles}</StyledTableCell>
-        <StyledTableCell align="right">{item.locations}</StyledTableCell>
-        <StyledTableCell align="right">{item.last_updated}</StyledTableCell>
-        <StyledTableCell align="right">
+        <StyledTableCell>
+          {item.roles.map((role, index) => (
+            <div key={index}>{role}</div>
+          ))}
+        </StyledTableCell>
+        <StyledTableCell>{item.job_type}</StyledTableCell>
+        <StyledTableCell>{item.locations}</StyledTableCell>
+        <StyledTableCell>{item.last_updated}</StyledTableCell>
+        <StyledTableCell>
           <a href={item.apply_link} target="_blank" rel="noopener noreferrer">
-            {intl.formatMessage(copy.table.tableLink)}
+            {intl.formatMessage(copy.applyNow)}
           </a>
         </StyledTableCell>
       </StyledTableRow>

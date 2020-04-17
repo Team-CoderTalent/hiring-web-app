@@ -9,7 +9,8 @@ const TableWrapper = () => {
     {
       id: 1,
       name: "Company1",
-      roles: "Role1",
+      roles: ["Sales", "UX", "Project Manager", "Web developer"],
+      job_type: "Contract",
       locations: "location1",
       last_updated: "04 Apr",
       apply_link: "https://codertalent.io",
@@ -17,7 +18,8 @@ const TableWrapper = () => {
     {
       id: 2,
       name: "Company2",
-      roles: "Role2",
+      roles: ["Web developer"],
+      job_type: "Permanent",
       locations: "location2",
       last_updated: "04 Apr",
       apply_link: "https://codertalent.io",
@@ -25,7 +27,8 @@ const TableWrapper = () => {
     {
       id: 3,
       name: "Company3",
-      roles: "Role3",
+      roles: ["Web developer", "UX"],
+      job_type: "Permanent",
       locations: "location3",
       last_updated: "04 Apr",
       apply_link: "https://codertalent.io",
@@ -33,7 +36,8 @@ const TableWrapper = () => {
     {
       id: 4,
       name: "Company4",
-      roles: "Role4",
+      roles: ["UX", "Project Manager"],
+      job_type: "Contract",
       locations: "location4",
       last_updated: "04 Apr",
       apply_link: "https://codertalent.io",
@@ -41,7 +45,8 @@ const TableWrapper = () => {
     {
       id: 5,
       name: "Company5",
-      roles: "Role5",
+      roles: ["www", "www"],
+      job_type: "Contract",
       locations: "location5",
       last_updated: "04 Apr",
       apply_link: "https://codertalent.io",
