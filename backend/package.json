@@ -1,0 +1,19 @@
+{
+  "name": "hiring-app-api",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "NODE_ENV=developemnt nodemon backend/server",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "CoderTalent",
+  "license": "ISC",
+  "dependencies": {
+    "colors": "^1.4.0",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "morgan": "^1.10.0"
+  }
+}
