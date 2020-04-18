@@ -1,7 +1,7 @@
 import { config } from "dotenv";
 import App from "./app";
 import { validateEnv } from './utils';
-import { JobsController, MainController } from './controllers';
+import { JobsController, MainController } from './controllers/v1';
 
 config();
 validateEnv();
