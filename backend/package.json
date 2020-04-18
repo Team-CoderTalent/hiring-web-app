@@ -30,6 +30,7 @@
     "@typescript-eslint/eslint-plugin": "^2.28.0",
     "@typescript-eslint/parser": "^2.28.0",
     "eslint": "^6.8.0",
+    "husky": "^4.2.5",
     "jest": "^25.3.0",
     "onchange": "^6.1.0",
     "serve": "^11.3.0",
@@ -39,5 +40,10 @@
     "ts-mongoose": "^0.0.21",
     "ts-node": "^8.8.2",
     "typescript": "^3.8.3"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "yarn test && yarn lint"
+    }
   }
 }
