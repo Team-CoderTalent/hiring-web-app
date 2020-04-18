@@ -7,13 +7,18 @@
     "noImplicitAny": true,
     "moduleResolution": "node",
     "sourceMap": true,
-    "outDir": "dist",
+    "outDir": ".",
+    "rootDir": ".",
     "baseUrl": "."
   },
   "exclude": [
+    "./coverage/**",
     "./node_modules",
     "./jest.config.js",
-    "**/*.spec.ts"
+    "./dist",
+    "./*.js"
   ],
-  "include": ["src/**/*"]
+  "include": [
+    "**/*.ts"
+  ]
 }

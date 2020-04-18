@@ -18,6 +18,7 @@ class App {
     this.initializeControllers();
   }
 
+  /* istanbul ignore next */
   public listen(): void {
     this.app.listen(this.port, () => {
       return console.log(`Server is listening on ${this.port}`);

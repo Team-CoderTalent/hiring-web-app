@@ -3,7 +3,7 @@ import Job from './job.interface';
 import { BaseController, Ibase } from '../../index';
 
 class JobsController extends BaseController implements Ibase {
-  public path = '/api/v1/jobs';
+  public path = '/api/v1';
   public router = express.Router();
 
   private jobs: Job[] = [
@@ -26,7 +26,7 @@ class JobsController extends BaseController implements Ibase {
   }
 
   public initializeRoutes(): void {
-    this.router.get(this.path, this.getAllJobs);
+    this.router.get(this.path + '/jobs', this.getAllJobs);
   }
 
   getAllJobs = async (request: express.Request, response: express.Response) => {
