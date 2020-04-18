@@ -1,4 +1,4 @@
-interface Job {
+interface JobInterface {
   company: string;
   role: string;
   jobType: string;
@@ -10,4 +10,4 @@ interface Job {
   createdAt: Date;
 }
 
-export default Job;
+export default JobInterface;

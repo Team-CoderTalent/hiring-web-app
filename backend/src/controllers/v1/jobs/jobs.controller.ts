@@ -1,12 +1,12 @@
 import express from 'express';
-import Job from './job.interface';
-import { BaseController, Ibase } from '../../index';
+import { JobInterface } from '../../../interfaces';
+import { ControllerInterface } from '../../../interfaces';
 
-class JobsController extends BaseController implements Ibase {
+class JobsController implements ControllerInterface {
   public path = '/api/v1';
   public router = express.Router();
 
-  private jobs: Job[] = [
+  private jobs: JobInterface[] = [
     {
       company: 'Yapily',
       role: "Software Engineer",
@@ -21,7 +21,6 @@ class JobsController extends BaseController implements Ibase {
   ];
 
   constructor() {
-    super();
     this.initializeRoutes();
   }
 
