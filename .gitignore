@@ -11,7 +11,10 @@ build
 
 # misc
 .DS_Store
-.env.*
+.env.dev
+.env.production
+.env.staging
+.env
 config.env
 
 *.log*
