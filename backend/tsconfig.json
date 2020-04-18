@@ -8,14 +8,15 @@
     "moduleResolution": "node",
     "sourceMap": true,
     "outDir": ".",
+    "rootDir": ".",
+    "baseUrl": "."
   },
   "exclude": [
     "./coverage/**",
     "./node_modules",
     "./jest.config.js",
     "./dist",
-    "./*.js",
-    "**/*.spec.ts"
+    "./*.js"
   ],
   "include": [
     "**/*.ts"

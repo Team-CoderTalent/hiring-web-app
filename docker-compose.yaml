@@ -2,10 +2,23 @@ version: "3"
 services:
   hiring-app-api:
     build: ./backend
-    container_name: hiring-app-api
     environment:
       PORT: 8081
       NODE_ENV: production
       MONGO_URI: ""
     ports:
       - 8081:8081
+    networks:
+      - webappnetwork
+  hiring-web-app:
+    build: ./client
+    links:
+      - hiring-app-api
+    networks:
+      - webappnetwork
+    ports:
+      - 8082:80
+
+networks:
+  webappnetwork:
+    driver: bridge
