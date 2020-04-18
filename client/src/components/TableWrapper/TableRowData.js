@@ -7,20 +7,21 @@ import copy from "../../copy.json";
 export const TableRowData = ({ intl, items }) => (
   <TableBody>
     {items.map(item => (
-      <StyledTableRow key={item.id}>
+      <StyledTableRow key={item.createdAt}>
         <StyledTableCell component="th" scope="row">
-          <strong>{item.name}</strong>
+          <strong>{item.company}</strong>
         </StyledTableCell>
-        <StyledTableCell>
+        {/* <StyledTableCell>
           {item.roles.map((role, index) => (
             <div key={index}>{role}</div>
           ))}
-        </StyledTableCell>
-        <StyledTableCell>{item.job_type}</StyledTableCell>
-        <StyledTableCell>{item.locations}</StyledTableCell>
-        <StyledTableCell>{item.last_updated}</StyledTableCell>
+        </StyledTableCell> */}
+        <StyledTableCell>{item.role}</StyledTableCell>
+        <StyledTableCell>{item.jobType}</StyledTableCell>
+        <StyledTableCell>{item.location}</StyledTableCell>
+        <StyledTableCell>{item.lastUpdated}</StyledTableCell>
         <StyledTableCell>
-          <a href={item.apply_link} target="_blank" rel="noopener noreferrer">
+          <a href={item.link} target="_blank" rel="noopener noreferrer">
             {intl.formatMessage(copy.applyNow)}
           </a>
         </StyledTableCell>

@@ -5,14 +5,18 @@ import Header from "./Header";
 import TopBar from "./TopBar";
 import TableWrapper from "./TableWrapper";
 
+import { GlobalProvider } from "../state/GlobalState";
+
 const App = () => (
-  <IntlProvider locale="en">
-    <Container>
-      <Header />
-      <TopBar />
-      <TableWrapper />
-    </Container>
-  </IntlProvider>
+  <GlobalProvider>
+    <IntlProvider locale="en">
+      <Container>
+        <Header />
+        <TopBar />
+        <TableWrapper />
+      </Container>
+    </IntlProvider>
+  </GlobalProvider>
 );
 
 export default App;
