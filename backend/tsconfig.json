@@ -16,7 +16,8 @@
     "./node_modules",
     "./jest.config.js",
     "./dist",
-    "./*.js"
+    "./*.js",
+    "jest-mongodb-config.js"
   ],
   "include": [
     "**/*.ts"
