@@ -17,8 +17,7 @@ class App {
   }
 
   public listen(): void {
-    this.app.listen(this.port, err => {
-      if (err) return console.error(err);
+    this.app.listen(this.port, () => {
       return console.log(`Server is listening on ${this.port}`);
     });
   }
