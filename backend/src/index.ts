@@ -1,19 +1,24 @@
 import { config } from "dotenv";
 import App from "./app";
 import { validateEnv } from './utils';
-import { JobsController } from './controllers';
+import { JobsController, MainController } from './controllers';
 
 config();
 validateEnv();
 
-const port = parseInt( process.env.PORT) || 5000;
-const app = new App(
+/* istanbul ignore next */
+const port = parseInt(process.env.PORT) || 5000;
+const appInstance = new App(
   [
-    new JobsController()
+    new JobsController(),
+    new MainController(),
   ],
   port,
 );
 
-app.listen();
+/* istanbul ignore next */
+if(require.main === module) {
+  appInstance.listen();
+}
 
-export default app;
+export default appInstance.app;

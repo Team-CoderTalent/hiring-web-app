@@ -4,8 +4,8 @@ services:
     build: ./backend
     container_name: hiring-app-api
     environment:
-      PORT: 8080
+      PORT: 8081
       NODE_ENV: production
       MONGO_URI: ""
     ports:
-      - 8080:8080
+      - 8081:8081

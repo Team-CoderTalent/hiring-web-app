@@ -8,8 +8,6 @@
     "moduleResolution": "node",
     "sourceMap": true,
     "outDir": ".",
-    "rootDir": ".",
-    "baseUrl": "."
   },
   "exclude": [
     "./coverage/**",
