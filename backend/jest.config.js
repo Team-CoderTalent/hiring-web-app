@@ -3,6 +3,7 @@ module.exports = {
   transform: {
     '^.+\\.tsx?$': 'ts-jest'
   },
+  preset: '@shelf/jest-mongodb',
   coverageThreshold: {
     global: {
       branches: 80,
@@ -12,4 +13,4 @@ module.exports = {
     }
   },
   coverageReporters: ['json', 'lcov', 'text', 'clover']
-}
+};

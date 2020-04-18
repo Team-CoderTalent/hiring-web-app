@@ -2,6 +2,8 @@ import express from 'express';
 import bodyParser from 'body-parser';
 import helmet from "helmet";
 import cors from "cors";
+import mongoose from 'mongoose';
+
 import { BaseController } from './controllers';
 
 class App {
@@ -14,8 +16,10 @@ class App {
     this.port = port;
     this._controllers = controllers;
 
-    this.initializeMiddlewares();
+    this.connectToTheDatabase();
+    this.initializeMiddleware();
     this.initializeControllers();
+    this.setBackgroundJobs();
   }
 
   /* istanbul ignore next */
@@ -31,10 +35,27 @@ class App {
     });
   }
 
-  private initializeMiddlewares(): void {
+  private initializeMiddleware(): void {
     this.app.use(bodyParser.json());
     this.app.use(helmet());
     this.app.use(cors());
+  }
+
+  private setBackgroundJobs(): void {
+    mongoose.connection.once('open', async () => {
+      // TODO: here is going background job
+    });
+  }
+
+  private connectToTheDatabase(): void {
+    /* istanbul ignore next */
+    if (mongoose.connection.readyState === 0) {
+      const {
+        MONGO_URI,
+      } = process.env;
+      mongoose.connect(MONGO_URI,
+        { useNewUrlParser: true, useUnifiedTopology: true });
+    }
   }
 }
 
