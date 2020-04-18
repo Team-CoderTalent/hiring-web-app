@@ -16,7 +16,8 @@
     "./node_modules",
     "./jest.config.js",
     "./dist",
-    "./*.js"
+    "./*.js",
+    "**/*.spec.ts"
   ],
   "include": [
     "**/*.ts"

@@ -1,13 +1,14 @@
 import express from 'express';
 import bodyParser from 'body-parser';
-import { Base } from './controllers';
+import helmet from "helmet";
+import { BaseController } from './controllers';
 
 class App {
   public app: express.Application;
   public port: number;
-  private _controllers: Array<Base>;
+  private _controllers: Array<BaseController>;
 
-  constructor(controllers: Array<Base>, port: number) {
+  constructor(controllers: Array<BaseController>, port: number) {
     this.app = express();
     this.port = port;
     this._controllers = controllers;
@@ -17,20 +18,20 @@ class App {
   }
 
   public listen(): void {
-    this.app.listen(this.port, err => {
-      if (err) return console.error(err);
+    this.app.listen(this.port, () => {
       return console.log(`Server is listening on ${this.port}`);
     });
   }
 
   private initializeControllers(): void {
-    this._controllers.forEach((controller: Base) => {
+    this._controllers.forEach((controller: BaseController) => {
       this.app.use('/', controller.router);
     });
   }
 
   private initializeMiddlewares(): void {
     this.app.use(bodyParser.json());
+    this.app.use(helmet());
   }
 }
 

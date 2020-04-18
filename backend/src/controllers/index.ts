@@ -1,5 +1,8 @@
-import { Base } from './base';
+import { BaseController, Ibase } from './base.controller';
+import JobsController from './v1/jobs/jobs.controller'
 
 export {
-  Base
+  BaseController,
+  JobsController,
+  Ibase
 }
