@@ -1,14 +1,14 @@
 import express from 'express';
 import bodyParser from 'body-parser';
 import helmet from "helmet";
-import { Base } from './controllers';
+import { BaseController } from './controllers';
 
 class App {
   public app: express.Application;
   public port: number;
-  private _controllers: Array<Base>;
+  private _controllers: Array<BaseController>;
 
-  constructor(controllers: Array<Base>, port: number) {
+  constructor(controllers: Array<BaseController>, port: number) {
     this.app = express();
     this.port = port;
     this._controllers = controllers;
@@ -24,7 +24,7 @@ class App {
   }
 
   private initializeControllers(): void {
-    this._controllers.forEach((controller: Base) => {
+    this._controllers.forEach((controller: BaseController) => {
       this.app.use('/', controller.router);
     });
   }

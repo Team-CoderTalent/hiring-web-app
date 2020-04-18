@@ -1,7 +1,8 @@
 import express from 'express';
 import Job from './job.interface';
+import { BaseController, Ibase } from '../../index';
 
-class JobsController {
+class JobsController extends BaseController implements Ibase {
   public path = '/api/v1/jobs';
   public router = express.Router();
 
@@ -20,10 +21,11 @@ class JobsController {
   ];
 
   constructor() {
-    this.intializeRoutes();
+    super();
+    this.initializeRoutes();
   }
 
-  public intializeRoutes(): void {
+  public initializeRoutes(): void {
     this.router.get(this.path, this.getAllJobs);
   }
 
