@@ -5,10 +5,11 @@ import { validateEnv } from './utils';
 config();
 validateEnv();
 
+const port = parseInt( process.env.PORT) || 5000;
 const app = new App(
   [
   ],
-  5000,
+  port,
 );
 
 app.listen();
