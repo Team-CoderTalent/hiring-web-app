@@ -7,5 +7,6 @@ export function validateEnv(): void {
     MONGO_URI: str(),
     PORT: port(),
     NODE_ENV: str(),
+    GOOGLE_SPREADSHEET_ID: str(),
   });
 }

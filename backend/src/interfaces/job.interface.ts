@@ -6,6 +6,7 @@ interface JobInterface {
   link: string;
   category: string;
   lastUpdated: string;
+  active: string;
   updatedAt: Date;
   createdAt: Date;
 }

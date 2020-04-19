@@ -4,6 +4,7 @@ import helmet from "helmet";
 import cors from "cors";
 import mongoose from 'mongoose';
 import { ControllerInterface } from './interfaces';
+import { UpdateJobsFromSpreadsheetWorker } from './workers';
 
 class App {
   public app: express.Application;
@@ -42,7 +43,18 @@ class App {
 
   private setBackgroundJobs(): void {
     mongoose.connection.once('open', async () => {
-      // TODO: here is going background job
+      const {
+        UPDATE_JOBS_INTERVAL,
+        GOOGLE_SPREADSHEET_ID,
+        GOOGLE_SERVICE_ACCOUNT_EMAIL,
+        GOOGLE_PRIVATE_KEY
+      } = process.env;
+
+      /* istanbul ignore next */
+      const interval = parseInt(UPDATE_JOBS_INTERVAL) || 600000;
+      const updateJobs = new UpdateJobsFromSpreadsheetWorker(interval,
+        GOOGLE_SPREADSHEET_ID, GOOGLE_SERVICE_ACCOUNT_EMAIL, GOOGLE_PRIVATE_KEY);
+      await updateJobs.start();
     });
   }
 

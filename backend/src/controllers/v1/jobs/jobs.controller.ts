@@ -14,8 +14,8 @@ class JobsController implements ControllerInterface {
     this.router.get(this.path + '/jobs', this.getAllJobs);
   }
 
-  getAllJobs: any = async (request: express.Request, response: express.Response) => {
-    const jobs = await jobModel.find();
+  getAllJobs = async (request: express.Request, response: express.Response) => {
+    const jobs: JobInterface[] = await jobModel.find();
 
     return response.send(jobs);
   }
