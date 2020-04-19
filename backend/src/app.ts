@@ -54,7 +54,7 @@ class App {
       const interval = parseInt(UPDATE_JOBS_INTERVAL) || 600000;
       const updateJobs = new UpdateJobsFromSpreadsheetWorker(interval,
         GOOGLE_SPREADSHEET_ID, GOOGLE_SERVICE_ACCOUNT_EMAIL, GOOGLE_PRIVATE_KEY);
-      await updateJobs.start();
+      await updateJobs.startWithInterval();
     });
   }
 

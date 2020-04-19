@@ -8,4 +8,4 @@ RUN npm i -g yarn
 RUN yarn
 RUN yarn build
 EXPOSE 8080
-CMD ["node", "src/index.js"]
+CMD ["node", "src/server.js"]
