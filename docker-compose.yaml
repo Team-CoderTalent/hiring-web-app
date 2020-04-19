@@ -18,7 +18,10 @@ services:
       - webappnetwork
     ports:
       - 8082:80
-
+  mongo:
+    image: mongo
+    ports:
+      - '27017:27017'
 networks:
   webappnetwork:
     driver: bridge
