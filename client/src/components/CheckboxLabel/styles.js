@@ -5,12 +5,6 @@ const styles = makeStyles(theme => ({
     flexGrow: 1,
     marginLeft: theme.spacing(5),
   },
-  dropDown: {
-    display: "none",
-  },
-  dropDownActive: {
-    display: "block",
-  },
 }));
 
 export default styles;

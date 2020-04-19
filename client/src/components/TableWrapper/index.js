@@ -5,13 +5,21 @@ import TableHeader from "./TableHeader";
 import TableRowData from "./TableRowData";
 import { GlobalContext } from "../../state/GlobalState";
 
-const TableWrapper = ({ searchTerm }) => {
+const TableWrapper = ({ searchTerm, showOnlyContract, showOnlyPermanent }) => {
   const { jobs, getJobs } = useContext(GlobalContext);
 
   //TODO: Refactor this to use reducer
-  const filterJobs = jobs.filter(
+  let filterJobs = jobs.filter(
     job => job.company.toLowerCase().indexOf(searchTerm.toLowerCase()) > -1
   );
+
+  if (showOnlyContract) {
+    filterJobs = filterJobs.filter(job => job.jobType === "Contract");
+  }
+
+  if (showOnlyPermanent) {
+    filterJobs = filterJobs.filter(job => job.jobType === "Permanent");
+  }
 
   useEffect(() => {
     getJobs();

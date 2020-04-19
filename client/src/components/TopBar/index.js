@@ -6,11 +6,16 @@ import { MuiThemeProvider } from "@material-ui/core/styles";
 import { injectIntl } from "react-intl";
 import styles from "./styles";
 import SearchBar from "../SearchBar";
-import Dropdown from "../Dropdown";
+import CheckboxLabel from "../CheckboxLabel";
 import { theme } from "../../theme/overrides";
 import copy from "../../copy.json";
 
-export const TopBar = ({ intl, searchTerm }) => {
+export const TopBar = ({
+  intl,
+  searchTerm,
+  showOnlyPermanent,
+  showOnlyContract,
+}) => {
   const classes = styles();
 
   return (
@@ -19,7 +24,10 @@ export const TopBar = ({ intl, searchTerm }) => {
         <AppBar position="static" className={classes.appBar}>
           <Toolbar disableGutters>
             <SearchBar searchInput={searchTerm} />
-            <Dropdown />
+            <CheckboxLabel
+              checkboxPermanent={showOnlyPermanent}
+              checkboxContract={showOnlyContract}
+            />
             <Button
               variant="contained"
               color="secondary"
