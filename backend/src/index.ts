@@ -1,7 +1,12 @@
 import { config } from "dotenv";
 import App from "./app";
 import { validateEnv } from './utils';
-import { JobsController, MainController } from './controllers';
+import { JobsController, MainController } from './controllers/v1';
+
+/* istanbul ignore next */
+if (process.env.NODE_ENV === 'development') {
+  process.env.NODE_TLS_REJECT_UNAUTHORIZED = '0';
+}
 
 config();
 validateEnv();

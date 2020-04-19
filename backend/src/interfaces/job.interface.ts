@@ -1,4 +1,4 @@
-interface Job {
+interface JobInterface {
   company: string;
   role: string;
   jobType: string;
@@ -6,8 +6,9 @@ interface Job {
   link: string;
   category: string;
   lastUpdated: string;
+  active: string;
   updatedAt: Date;
   createdAt: Date;
 }
 
-export default Job;
+export default JobInterface;
