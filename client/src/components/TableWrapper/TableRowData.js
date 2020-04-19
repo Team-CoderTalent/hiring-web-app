@@ -7,15 +7,10 @@ import copy from "../../copy.json";
 export const TableRowData = ({ intl, items }) => (
   <TableBody>
     {items.map(item => (
-      <StyledTableRow key={item.createdAt}>
+      <StyledTableRow key={item._id}>
         <StyledTableCell component="th" scope="row">
           <strong>{item.company}</strong>
         </StyledTableCell>
-        {/* <StyledTableCell>
-          {item.roles.map((role, index) => (
-            <div key={index}>{role}</div>
-          ))}
-        </StyledTableCell> */}
         <StyledTableCell>{item.role}</StyledTableCell>
         <StyledTableCell>{item.jobType}</StyledTableCell>
         <StyledTableCell>{item.location}</StyledTableCell>

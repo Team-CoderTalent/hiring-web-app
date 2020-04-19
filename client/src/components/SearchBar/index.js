@@ -5,7 +5,7 @@ import { injectIntl } from "react-intl";
 import styles from "./styles";
 import copy from "../../copy.json";
 
-export const SearchBar = ({ intl }) => {
+export const SearchBar = ({ intl, searchInput }) => {
   const classes = styles();
   return (
     <div className={classes.search}>
@@ -18,6 +18,7 @@ export const SearchBar = ({ intl }) => {
           root: classes.inputRoot,
           input: classes.inputInput,
         }}
+        {...searchInput}
       />
     </div>
   );

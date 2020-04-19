@@ -10,20 +10,21 @@ import Dropdown from "../Dropdown";
 import { theme } from "../../theme/overrides";
 import copy from "../../copy.json";
 
-export const TopBar = ({ intl }) => {
+export const TopBar = ({ intl, searchTerm }) => {
   const classes = styles();
+
   return (
     <MuiThemeProvider theme={theme}>
       <div className={classes.root}>
         <AppBar position="static" className={classes.appBar}>
           <Toolbar disableGutters>
-            <SearchBar />
+            <SearchBar searchInput={searchTerm} />
             <Dropdown />
             <Button
               variant="contained"
               color="secondary"
               target="_blank"
-              href="https://codertalent.io"
+              href="https://docs.google.com/forms/d/e/1FAIpQLScwS44_Ock6nUNJRVNfReXo6zzTehk9lEP-yt-47XQ2KAKYxQ/viewform"
             >
               {intl.formatMessage(copy.appBar.buttons.buttonCompany)}
             </Button>
