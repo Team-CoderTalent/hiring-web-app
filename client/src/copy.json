@@ -1,7 +1,7 @@
 {
   "headline": {
     "id": "views.headline",
-    "defaultMessage": "Who's Actually Hiring?"
+    "defaultMessage": "Who's Still Hiring?"
   },
   "header": {
     "id": "views.header",
@@ -52,5 +52,13 @@
   "applyNow": {
     "id": "views.applynow",
     "defaultMessage": "Apply Now"
+  },
+  "contract": {
+    "id": "views.contract",
+    "defaultMessage": "Contract"
+  },
+  "permanent": {
+    "id": "views.permanent",
+    "defaultMessage": "Permanent"
   }
 }

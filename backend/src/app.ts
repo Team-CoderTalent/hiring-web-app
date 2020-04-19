@@ -1,10 +1,10 @@
-import express from 'express';
-import bodyParser from 'body-parser';
+import express from "express";
+import bodyParser from "body-parser";
 import helmet from "helmet";
 import cors from "cors";
-import mongoose from 'mongoose';
-import { ControllerInterface } from './interfaces';
-import { UpdateJobsFromSpreadsheetWorker } from './workers';
+import mongoose from "mongoose";
+import { ControllerInterface } from "./interfaces";
+import { UpdateJobsFromSpreadsheetWorker } from "./workers";
 
 class App {
   public app: express.Application;
@@ -31,7 +31,7 @@ class App {
 
   private initializeControllers(): void {
     this._controllers.forEach((controller: ControllerInterface) => {
-      this.app.use('/', controller.router);
+      this.app.use("/", controller.router);
     });
   }
 
@@ -42,18 +42,22 @@ class App {
   }
 
   private setBackgroundJobs(): void {
-    mongoose.connection.once('open', async () => {
+    mongoose.connection.once("open", async () => {
       const {
         UPDATE_JOBS_INTERVAL,
         GOOGLE_SPREADSHEET_ID,
         GOOGLE_SERVICE_ACCOUNT_EMAIL,
-        GOOGLE_PRIVATE_KEY
+        GOOGLE_PRIVATE_KEY,
       } = process.env;
 
       /* istanbul ignore next */
       const interval = parseInt(UPDATE_JOBS_INTERVAL) || 600000;
-      const updateJobs = new UpdateJobsFromSpreadsheetWorker(interval,
-        GOOGLE_SPREADSHEET_ID, GOOGLE_SERVICE_ACCOUNT_EMAIL, GOOGLE_PRIVATE_KEY);
+      const updateJobs = new UpdateJobsFromSpreadsheetWorker(
+        interval,
+        GOOGLE_SPREADSHEET_ID,
+        GOOGLE_SERVICE_ACCOUNT_EMAIL,
+        GOOGLE_PRIVATE_KEY
+      );
       await updateJobs.startWithInterval();
     });
   }
@@ -61,11 +65,11 @@ class App {
   private connectToTheDatabase(): void {
     /* istanbul ignore next */
     if (mongoose.connection.readyState === 0) {
-      const {
-        MONGO_URI,
-      } = process.env;
-      mongoose.connect(MONGO_URI,
-        { useNewUrlParser: true, useUnifiedTopology: true });
+      const { MONGO_URI } = process.env;
+      mongoose.connect(MONGO_URI, {
+        useNewUrlParser: true,
+        useUnifiedTopology: true,
+      });
     }
   }
 }
