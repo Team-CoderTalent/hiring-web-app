@@ -1,12 +1,11 @@
 import express from 'express';
-import {BaseController, Ibase} from './index';
+import { ControllerInterface } from '../interfaces';
 
-class MainController extends BaseController implements Ibase {
+class MainController implements ControllerInterface {
   public path = '/';
   public router = express.Router();
 
   constructor() {
-    super();
     this.initializeRoutes();
   }
 
