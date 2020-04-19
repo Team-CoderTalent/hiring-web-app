@@ -4,7 +4,6 @@ export default function useInputState(intialValue) {
   const [value, setValue] = useState(intialValue);
   function onChange(event) {
     setValue(event.target.value);
-    console.log(value);
   }
 
   return { value, onChange };

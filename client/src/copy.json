@@ -52,5 +52,13 @@
   "applyNow": {
     "id": "views.applynow",
     "defaultMessage": "Apply Now"
+  },
+  "contract": {
+    "id": "views.contract",
+    "defaultMessage": "Contract"
+  },
+  "permanent": {
+    "id": "views.permanent",
+    "defaultMessage": "Permanent"
   }
 }
