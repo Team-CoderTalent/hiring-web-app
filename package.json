@@ -2,7 +2,6 @@
   "name": "hiring-web-app-main",
   "version": "1.0.0",
   "description": "",
-  "main": "server.js",
   "scripts": {
     "server": "cd backend && NODE_ENV=developemnt yarn dev",
     "client": "cd client && yarn start",

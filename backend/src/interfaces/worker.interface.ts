@@ -1,5 +1,5 @@
 interface Worker {
-  start(): void;
+  startWithInterval(): void;
 }
 
 export default Worker;

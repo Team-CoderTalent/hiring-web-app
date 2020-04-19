@@ -12,6 +12,7 @@ build
 # misc
 .DS_Store
 .env.dev
+.env.development
 .env.production
 .env.staging
 .env
@@ -21,3 +22,8 @@ config.env
 
 # editor
 .idea
+
+# Elastic Beanstalk Files
+.elasticbeanstalk/*
+!.elasticbeanstalk/*.cfg.yml
+!.elasticbeanstalk/*.global.yml

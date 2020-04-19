@@ -5,11 +5,17 @@ services:
     environment:
       PORT: 8081
       NODE_ENV: production
-      MONGO_URI: ""
+      GOOGLE_SPREADSHEET_ID: "1wmQaHyGjTbDCnbJWT9Dq2Vncu6xa_DXEnSisrgDc3N0"
+      GOOGLE_SERVICE_ACCOUNT_EMAIL: 'test-349@silicon-coder-274621.iam.gserviceaccount.com'
+      GOOGLE_PRIVATE_KEY: "-----BEGIN PRIVATE KEY-----\nMIIEvAIBADANBgkqhkiG9w0BAQEFAASCBKYwggSiAgEAAoIBAQCuFK4tzlVKipJh\nVba4zkpUp/4R8szB2dbSkgZi/nzUyYYSrDG0hc09eLaCZtZ99Lh9ZnGWytEr59sz\nUQJzPosDRbEC2CcKpsu8eesg5ngJMoioYxDNSHPjcZdQJqF4adwuVkGjSuubcqdM\nSMduF9O88y0wnREhC0ngYXJ1UKJWSe9Pc5En1Sg9IpFZSpcnRX8V3e/UzbOVazYj\nLIQ0JKoIAQFU3Bva1gzfTEl8WMDVhMnSz2RybJykly9ZGRmFDBg1v+CE2qAuqiti\nx0pNl1EGicVV2KBy8E5DKHFtT/FDG8zHC3aGvPqWbMaOc5YvrKWti0lHEAq9J8J+\nLew8JVvvAgMBAAECgf9xmLfX82mYgg2RzBYNEQKpO6GB+G8XLTq69VZue/hrjYfh\n4F+rmE9kajau/hdPUzf0Y/OfSGUabECsn5QH9YEWr8c2d4GtRw5zUxvVTh4GjR4S\nGT4IRdvLuptmpAe6fcvNG7VkIKpl8LKtI0LHv4vQCG4troobaaX2fvXq0RceNtSY\nuxSgC5qrdRvkqigJcbUbv9U/XE9rdhC51j+m550KfL0J137r/kCC+lmQMkjWPM46\nBzF9z/TUgGjQ0M0H8mMS4Gx/xzpithNQKmObua4ICbxFwKiSfY8gNHqzgRG4N1I7\n5AFsX6S0bt/WLJeYWEag/ZE4iwHQQKEEFOFavEkCgYEA1FgZndtoFoWLIXVU+k7g\nxjsNEcD45MJw/7H2kFF7dRLnwOQjrq1RBypm5YDBdjkYP8NVrMYxCxbyC6LP4CXc\nMmMy3USmm/m8aAdrqu6j2BbFYkyQF/5p27f+wzjfF5ZEALFL3+iAErpQ9PPqEIQy\nSgllh2pkCZ8brBTJOwHSU2kCgYEA0d69Hb7+o3qKaPfNWmMCRcHaPKq73C+y5ILl\n9w1rP21TJA0TNnU4ThBRo4Pn5FAx1V/XkseNYLkg0E393xvOdX+Q7sDfYopTpNde\nzZrhfj9KJnSSR8QRcQDXBh9aTQfBWB94OBApu7mY2G1Bm3oyRr0GNlfHJ06v48Vb\nUPQUwZcCgYBDnsKZmHMvKNvDjd+/zjqaJdflnXQlNR5S7tM75hbQk3Kl5IDQcXTq\nOUCHOVdiVJA6TfQMjxizFV2DAxf7o1LZ4OkjuWbtKLwszKAm0NPwTmARC5yfZ29C\nfvdsJ8IzerCxH8SvyxRt4lNBjiMtm0uAdDmWw/STc82WIRBr8AqQcQKBgQCiWDLi\nt8QyobA/0rC/oqc3XuV62HfJs/wmWDucCH1V6zPNR2/9SF/twyHj4z2Wl5J1BFa1\n7DepAownlq0z0Ua8DZoHlps2ltptQUzMr2qPRlYNuU8OxNTZHVU4HzizLbSafn14\noMgnt0JM6Pc/Vh9eKQqNLwmXln7pKtmgna8QsQKBgQC+pNGCcGuNyBFVc63zoaU3\ngQckiYAnnVdHczVkIUTok/snRxU+eitwKoZuN0dzMLlRO7d0CqpEqF9Mm9Est34g\nQdX1dpeRSKZdexC1ciMNX4v7n3I2HRv92vH5XMJZsw891xbpUr2GqZV2w6J8B6YJ\njEVKcVnC7004kyKPYdcw7g==\n-----END PRIVATE KEY-----\n"
+      UPDATE_JOBS_INTERVAL: 10000
+      MONGO_URI: "mongodb://mongo:27017/hiring_app?retryWrites=true&w=majority"
     ports:
       - 8081:8081
     networks:
       - webappnetwork
+    links:
+      - mongo
   hiring-web-app:
     build: ./client
     links:
@@ -22,6 +28,9 @@ services:
     image: mongo
     ports:
       - '27017:27017'
+    networks:
+      - webappnetwork
+
 networks:
   webappnetwork:
     driver: bridge

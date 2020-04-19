@@ -8,7 +8,9 @@ if (process.env.NODE_ENV === 'development') {
   process.env.NODE_TLS_REJECT_UNAUTHORIZED = '0';
 }
 
-config();
+/* istanbul ignore next */
+const envFile = process.env.NODE_ENV ? `.env.${process.env.NODE_ENV}` : '.env';
+config({ path: envFile });
 validateEnv();
 
 /* istanbul ignore next */

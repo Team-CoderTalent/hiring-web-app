@@ -1,11 +1,18 @@
-import app from "../index";
+import app from "../server";
 const request = require('supertest');
+import mongoose from 'mongoose';
+import { MockMongoose } from 'mock-mongoose';
 
 const server = request(app);
 const apiPath = "/api/v1";
-
+let mockMongoose: MockMongoose = new MockMongoose(mongoose);
 
 describe("index/init", () => {
+  beforeAll(async () => {
+    await mockMongoose.prepareStorage();
+    await mongoose.connect(process.env.MONGO_URI, { useNewUrlParser: true, useUnifiedTopology: true });
+  });
+
   it("should initiate the app", () => {
     expect(app).toBeTruthy();
   });

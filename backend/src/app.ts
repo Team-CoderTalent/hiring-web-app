@@ -58,7 +58,7 @@ class App {
         GOOGLE_SERVICE_ACCOUNT_EMAIL,
         GOOGLE_PRIVATE_KEY
       );
-      await updateJobs.start();
+      await updateJobs.startWithInterval();
     });
   }
 

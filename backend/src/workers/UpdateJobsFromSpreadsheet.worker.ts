@@ -17,23 +17,28 @@ export default class UpdateJobsFromSpreadsheetWorker implements WorkerInterface 
     this._email = email;
   }
 
-  public async start(): Promise<boolean> {
+  /* istanbul ignore next */
+  public async startWithInterval(): Promise<boolean> {
     setInterval(async () => {
       const startTime = moment();
       console.log('Running update jobs background at', startTime.format("DD/MM/YYYY HH:mm:ss"));
-
       try {
-        const sheet = await this.getSheet();
-        const rows = await sheet.getRows();
-        const jobs: IjobWithAction = await this.prepareRows(rows);
-
-        await this.createJobs(jobs.create);
-        await this.updateJobs(jobs.update);
-      } catch (err) {
-        console.dir(err)
+        await this.start();
+      } catch (e) {
+        console.dir(e)
       }
     }, this._interval);
     return true;
+  }
+
+  public async start(): Promise<IjobWithAction> {
+    const sheet = await this.getSheet();
+    const rows = await sheet.getRows();
+    const jobs: IjobWithAction = await this.prepareRows(rows);
+
+    await this.createJobs(jobs.create);
+    await this.updateJobs(jobs.update);
+    return jobs;
   }
 
   private async createJobs(jobs: JobInterface[]): Promise<boolean> {
