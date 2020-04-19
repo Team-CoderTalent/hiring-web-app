@@ -14,13 +14,15 @@
   "author": "CoderTalent",
   "license": "ISC",
   "dependencies": {
+    "@types/mongoose": "^5.7.12",
     "cors": "^2.8.5",
     "dotenv": "^8.2.0",
     "envalid": "^6.0.1",
     "express": "^4.17.1",
     "google-spreadsheet": "^3.0.11",
     "helmet": "^3.22.0",
-    "moment": "^2.24.0"
+    "moment": "^2.24.0",
+    "mongoose": "^5.9.9"
   },
   "devDependencies": {
     "@shelf/jest-mongodb": "^1.1.5",
