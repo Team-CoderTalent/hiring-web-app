@@ -1,7 +1,7 @@
 import React, { createContext, useReducer } from "react";
 import axios from "axios";
 import AppReducer from "./AppReducer";
-import { GET_JOBS, JOBS_ERROR } from "../constants/ActionTypes";
+import { GET_JOBS, JOBS_ERROR, SEARCH_FILTER } from "../constants/ActionTypes";
 
 //Intial state
 const intialState = {
@@ -18,7 +18,7 @@ export const GlobalProvider = ({ children }) => {
   const [state, dispatch] = useReducer(AppReducer, intialState);
 
   //Actions
-  async function getJobs() {
+  const getJobs = async () => {
     try {
       const res = await axios.get("/api/v1/jobs");
 
@@ -32,7 +32,14 @@ export const GlobalProvider = ({ children }) => {
         payload: err,
       });
     }
-  }
+  };
+
+  const searchFilter = searchTerm => {
+    dispatch({
+      type: SEARCH_FILTER,
+      searchTerm,
+    });
+  };
   return (
     <GlobalContext.Provider
       value={{
@@ -40,6 +47,7 @@ export const GlobalProvider = ({ children }) => {
         error: state.error,
         loading: state.loading,
         getJobs,
+        searchFilter,
       }}
     >
       {children}
