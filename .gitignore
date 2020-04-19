@@ -12,6 +12,7 @@ build
 # misc
 .DS_Store
 .env.dev
+.env.development
 .env.production
 .env.staging
 .env
