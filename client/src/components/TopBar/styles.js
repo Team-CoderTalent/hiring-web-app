@@ -9,6 +9,12 @@ const styles = makeStyles(theme => ({
     backgroundColor: "white",
     boxShadow: "none",
   },
+  toolBar: {
+    display: "block",
+    [theme.breakpoints.up("sm")]: {
+      display: "flex",
+    },
+  },
 }));
 
 export default styles;

@@ -1,6 +1,7 @@
 import React from "react";
 import { IntlProvider } from "react-intl";
 import Container from "@material-ui/core/Container";
+import Logo from "./Logo";
 import Header from "./Header";
 import TopBar from "./TopBar";
 import TableWrapper from "./TableWrapper";
@@ -16,6 +17,7 @@ const App = () => {
     <GlobalProvider>
       <IntlProvider locale="en">
         <Container>
+          <Logo />
           <Header />
           <TopBar
             searchTerm={searchText}

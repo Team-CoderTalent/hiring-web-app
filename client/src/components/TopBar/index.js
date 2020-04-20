@@ -22,7 +22,7 @@ export const TopBar = ({
     <MuiThemeProvider theme={theme}>
       <div className={classes.root}>
         <AppBar position="static" className={classes.appBar}>
-          <Toolbar disableGutters>
+          <Toolbar disableGutters className={classes.toolBar}>
             <SearchBar searchInput={searchTerm} />
             <CheckboxLabel
               checkboxPermanent={showOnlyPermanent}

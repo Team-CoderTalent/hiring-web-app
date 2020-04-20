@@ -12,7 +12,9 @@ export const Header = ({ intl }) => {
       <Typography variant="h3" component="h1" gutterBottom>
         {intl.formatMessage(copy.headline)}
       </Typography>
-      <div className={classes.headline}>{intl.formatMessage(copy.header)}</div>
+      <Typography variant="h6" className={classes.headline}>
+        {intl.formatMessage(copy.header)}
+      </Typography>
     </div>
   );
 };

@@ -6,7 +6,10 @@ const styles = makeStyles(theme => ({
     padding: theme.spacing(5, 0),
   },
   headline: {
-    padding: theme.spacing(0, 20),
+    fontWeight: 100,
+    [theme.breakpoints.up("sm")]: {
+      padding: theme.spacing(0, 20),
+    },
   },
 }));
 
