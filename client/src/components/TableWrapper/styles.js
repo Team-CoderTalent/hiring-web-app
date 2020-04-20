@@ -24,4 +24,7 @@ export const styles = makeStyles(theme => ({
   root: {
     marginBottom: theme.spacing(5),
   },
+  container: {
+    maxHeight: 440,
+  },
 }));
