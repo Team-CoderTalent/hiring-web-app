@@ -5,12 +5,10 @@ import Logo from "./Logo";
 import Header from "./Header";
 import TopBar from "./TopBar";
 import TableWrapper from "./TableWrapper";
-import { GlobalProvider } from "../state/GlobalState";
-import useInputState from "../hooks/useInputState";
+import { GlobalProvider } from "../context/GlobalState";
 import useCheckboxState from "../hooks/useCheckboxState";
 
 const App = () => {
-  const searchText = useInputState("");
   const showOnlyContractCheckboxState = useCheckboxState(false);
   const showOnlyPermanentCheckboxState = useCheckboxState(false);
   return (
@@ -20,12 +18,10 @@ const App = () => {
           <Logo />
           <Header />
           <TopBar
-            searchTerm={searchText}
             showOnlyContract={showOnlyContractCheckboxState}
             showOnlyPermanent={showOnlyPermanentCheckboxState}
           />
           <TableWrapper
-            searchTerm={searchText.value}
             showOnlyContract={showOnlyContractCheckboxState.value}
             showOnlyPermanent={showOnlyPermanentCheckboxState.value}
           />
