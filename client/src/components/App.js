@@ -4,6 +4,7 @@ import Container from "@material-ui/core/Container";
 import Logo from "./Logo";
 import Header from "./Header";
 import TopBar from "./TopBar";
+import Footer from "./Footer";
 import TableWrapper from "./TableWrapper";
 import { GlobalProvider } from "../context/GlobalState";
 import useCheckboxState from "../hooks/useCheckboxState";
@@ -25,6 +26,7 @@ const App = () => {
             showOnlyContract={showOnlyContractCheckboxState.value}
             showOnlyPermanent={showOnlyPermanentCheckboxState.value}
           />
+          <Footer />
         </Container>
       </IntlProvider>
     </GlobalProvider>
