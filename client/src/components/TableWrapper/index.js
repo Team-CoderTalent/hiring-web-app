@@ -4,16 +4,14 @@ import TableContainer from "@material-ui/core/TableContainer";
 import TableHeader from "./TableHeader";
 import TableRowData from "./TableRowData";
 import { styles } from "./styles";
-import { GlobalContext } from "../../state/GlobalState";
+import { GlobalContext } from "../../context/GlobalState";
 
-const TableWrapper = ({ searchTerm, showOnlyContract, showOnlyPermanent }) => {
+const TableWrapper = ({ showOnlyContract, showOnlyPermanent }) => {
   const classes = styles();
   const { jobs, getJobs } = useContext(GlobalContext);
 
   //TODO: Refactor this to use reducer
-  let filterJobs = jobs.filter(
-    job => job.company.toLowerCase().indexOf(searchTerm.toLowerCase()) > -1
-  );
+  let filterJobs = jobs;
 
   if (showOnlyContract) {
     filterJobs = filterJobs.filter(job => job.jobType === "Contract");

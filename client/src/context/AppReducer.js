@@ -1,24 +1,22 @@
 import { GET_JOBS, SEARCH_FILTER, JOBS_ERROR } from "../constants/ActionTypes";
 
-export default (state, action) => {
-  switch (action.type) {
+export default (state, { type, payload }) => {
+  switch (type) {
     case GET_JOBS:
       return {
         ...state,
         loading: false,
-        jobs: action.payload,
+        jobs: payload,
       };
     case SEARCH_FILTER:
       return {
         ...state,
-        jobs: state.jobs.filter(job =>
-          job.toLowerCase().includes(action.searchTerm)
-        ),
+        jobs: payload,
       };
     case JOBS_ERROR:
       return {
         ...state,
-        error: action.payload,
+        error: payload,
       };
     default:
       return state;
