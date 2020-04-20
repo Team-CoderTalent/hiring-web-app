@@ -32,7 +32,7 @@ export const TopBar = ({
               variant="contained"
               color="secondary"
               target="_blank"
-              href="https://docs.google.com/forms/d/e/1FAIpQLScwS44_Ock6nUNJRVNfReXo6zzTehk9lEP-yt-47XQ2KAKYxQ/viewform"
+              href="https://bit.ly/2VIlDYx"
             >
               {intl.formatMessage(copy.appBar.buttons.buttonCompany)}
             </Button>
