@@ -3,7 +3,7 @@ services:
   hiring-app-api:
     build: ./backend
     environment:
-      PORT: 8081
+      PORT: 8080
       NODE_ENV: production
       GOOGLE_SPREADSHEET_ID: "1wmQaHyGjTbDCnbJWT9Dq2Vncu6xa_DXEnSisrgDc3N0"
       GOOGLE_SERVICE_ACCOUNT_EMAIL: 'test-349@silicon-coder-274621.iam.gserviceaccount.com'
@@ -11,7 +11,7 @@ services:
       UPDATE_JOBS_INTERVAL: 10000
       MONGO_URI: "mongodb://mongo:27017/hiring_app?retryWrites=true&w=majority"
     ports:
-      - 8081:8081
+      - 8080:8080
     networks:
       - webappnetwork
     links:
