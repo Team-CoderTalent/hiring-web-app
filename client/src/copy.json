@@ -5,7 +5,7 @@
   },
   "header": {
     "id": "views.header",
-    "defaultMessage": "During these unprecedented times due to Covid-19 we have seen huge numbers of layoffs and companies freezing their hiring process. Below is a list of companies who are actully hiring, we are updating the list on a regualr basis."
+    "defaultMessage": "During these unprecedented times due to Covid-19 we have seen huge numbers of layoffs and companies freezing their hiring process. Below is a list of companies who are actually hiring, we are updating the list on a regular basis."
   },
   "appBar": {
     "searchbar": {
