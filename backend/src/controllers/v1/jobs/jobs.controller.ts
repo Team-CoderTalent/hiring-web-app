@@ -15,7 +15,8 @@ class JobsController implements ControllerInterface {
   }
 
   getAllJobs = async (request: express.Request, response: express.Response) => {
-    const jobs: JobInterface[] = await jobModel.find();
+    const sort = {'_id': -1};
+    const jobs: JobInterface[] = await jobModel.find({ active: { $eq: '1' } }).sort(sort);
 
     return response.send(jobs);
   }

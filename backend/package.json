@@ -19,6 +19,7 @@
     "dotenv": "^8.2.0",
     "envalid": "^6.0.1",
     "express": "^4.17.1",
+    "express-cache-controller": "^1.1.0",
     "google-spreadsheet": "^3.0.11",
     "helmet": "^3.22.0",
     "moment": "^2.24.0",

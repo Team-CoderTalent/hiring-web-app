@@ -8,5 +8,6 @@ export function validateEnv(): void {
     PORT: port(),
     NODE_ENV: str(),
     GOOGLE_SPREADSHEET_ID: str(),
+    MAX_CACHE_GLOBAL: str(),
   });
 }
