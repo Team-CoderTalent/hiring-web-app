@@ -7,6 +7,7 @@ const jobSchema = new mongoose.Schema({
   jobType: String,
   location: String,
   link: String,
+  active: String,
   category: String,
   lastUpdated: String,
   updatedAt: Date,
