@@ -39,7 +39,7 @@
     ]
   },
   "devDependencies": {
-    "lodash": "^4.17.15",
+    "lodash": "^4.17.19",
     "material-ui-popup-state": "^1.5.4",
     "react-intl": "^4.3.1"
   },
